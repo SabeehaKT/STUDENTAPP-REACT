@@ -4,10 +4,16 @@ import NavBar from './NavBar'
 const ViewAll = () => {
     const [data, changeData] = useState(
         [
-            { "name": "Aju", "Admno": 101, "RollNo": 1 },
-            { "name": "Akash", "Admno": 102, "RollNo": 2 },
-            { "name": "Abijit", "Admno": 103, "RollNo": 3 },
-            { "name":"Abhay", "Admno":104, "RollNo":4}
+            {
+                "name": "Sabeeha",
+                "admno": "2905",
+                "rollno": "35",
+                "pname": "Siddeeq",
+                "college": "FISAT",
+                "dob": "10/01/02",
+                "email": "kampalasabeeha@gmail.com"
+
+            }
         ]
     )
     return (
@@ -16,24 +22,42 @@ const ViewAll = () => {
             <div className="container">
                 <div className="row">
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <div className="row g-3">
-                            {data.map(
-                                (value, index) => {
-                                    return <div className="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                        <div className="row">
+                            <div className="row">
+                                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">NAME</th>
+                                                <th scope="col">ADM NO.</th>
+                                                <th scope="col">ROLL NO.</th>
+                                                <th scope="col">PARENT NAME</th>
+                                                <th scope="col">COLLEGE</th>
+                                                <th scope="col">DOB</th>
+                                                <th scope="col">EMAIL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {data.map(
+                                                (value, index) => {
+                                                    return <tr>
+                                                        <td>{value.name}</td>
+                                                        <td>{value.admno}</td>
+                                                        <td>{value.rollno}</td>
+                                                        <td>{value.pname}</td>
+                                                        <td>{value.college}</td>
+                                                        <td>{value.dob}</td>
+                                                        <td>{value.email}</td>
+                                                    </tr>
+                                                }
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-                                        <div class="card">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYHZ7W7EQzAXlDElt-UavraguMz7vr-I3uOA&s" height="300px" class="card-img-top" alt="..." />
-                                            <div class="card-body">
-                                                <h5 class="card-title">{value.name}</h5>
-                                                <p class="card-text">Roll.No {value.RollNo}</p>
-                                                <p class="card-text">Adm.No {value.Admno}</p>
-                                                <a href="#" class="btn btn-primary">View Profile</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            )}
                         </div>
+
                     </div>
                 </div>
             </div>
