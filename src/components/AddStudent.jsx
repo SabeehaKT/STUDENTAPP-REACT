@@ -24,7 +24,7 @@ const AddStudent = () => {
         axios.post("http://localhost:8081/add", data).then(
             (response) => {
                 console.log(response.data)
-                if (response.data.status) {
+                if (response.data.status=="success") {
                     alert("Successfully added")
                 } else {
                     alert("Error!")
